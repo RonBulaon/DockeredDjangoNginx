@@ -17,7 +17,7 @@ services:
             - static_data:/vol/web
         environment:
             - SECRET_KEY=sample_secret_key
-            - ALLOWED_HOSTS=127.0.0.1,localhost
+            - ALLOWED_HOSTS=127.0.0.1,localhost,dev.ronwork.com
             - DB_HOST=db
             - DB_NAME=app
             - DB_USER=postgres
@@ -30,6 +30,7 @@ services:
             - static_data:/vol/static
         ports:
             - "8080:8080"
+            - "443:443"
         depends_on: 
             - app
 
