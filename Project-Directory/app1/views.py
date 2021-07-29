@@ -1,4 +1,7 @@
 from django.shortcuts import render
 
+from .models import SiteWide
+
 def index(request):
-    return render(request, 'app1/index.html')
+    sitewide = SiteWide.objects.all().first()
+    return render(request, 'app1/home.html', { 'sitewide':sitewide })

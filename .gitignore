@@ -1,4 +1,8 @@
 localNotes.md
+# exclude everything
+database-data/*
+# exception to the rule
+!database-data/.gitkeep 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

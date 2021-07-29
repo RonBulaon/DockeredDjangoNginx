@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import SiteWide
 
-# Register your models here.
+@admin.register(SiteWide)
+class SiteSettings(admin.ModelAdmin):
+    list_display = ['sitename']

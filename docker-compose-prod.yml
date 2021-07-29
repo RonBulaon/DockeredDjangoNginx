@@ -1,6 +1,15 @@
 version: '3.7'
 
 services:
+    db:
+        image: postgres:13-alpine
+        environment: 
+            - POSTGRES_DB=app
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=supersecretpassword
+        volumes:
+            - ./database-data:/var/lib/postgresql/data
+
     app:
         build:
             context: .
@@ -9,6 +18,10 @@ services:
         environment:
             - SECRET_KEY=sample_secret_key
             - ALLOWED_HOSTS=127.0.0.1,localhost
+            - DB_HOST=db
+            - DB_NAME=app
+            - DB_USER=postgres
+            - DB_PASS=supersecretpassword
 
     proxy:
         build: 
