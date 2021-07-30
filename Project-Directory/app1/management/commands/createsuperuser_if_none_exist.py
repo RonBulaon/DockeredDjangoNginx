@@ -11,7 +11,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("--user", required=True)
         parser.add_argument("--password", required=True)
-        parser.add_argument("--email", default="admin@example.com")
+        parser.add_argument("--email", default="admin@email.com")
 
     def handle(self, *args, **options):
 
