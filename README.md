@@ -25,5 +25,14 @@ docker-compose -f docker-compose-prod.yml up --build
 
 # DO NOT FORGET TO CHANGE THE CERTIFICATES
 ```
+# for self-signed certificates use below
 openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout private.key -out ce
 ```
+
+# DEFAULT Users
+* Superuser - admin:password
+* User - user1:password - member of userGroup
+* User - admin1:password - member of adminGroup
+* Group - userGroup
+* Group - adminGroup
+  
