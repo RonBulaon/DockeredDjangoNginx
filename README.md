@@ -1,4 +1,10 @@
 # Dockered Django Template
+
+This is my template for building a development environment for Python with using Django Web Framework within a Docker container.
+* Comes with PostgreSQL and SQLlite3.
+* Simple login features and default users.
+* Reverse Proxy with HTTPS configuration.
+
 ```
 docker-compose run app sh -c "python manage.py makemigrations"
 docker-compose run app sh -c "python manage.py migrate"
