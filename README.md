@@ -5,21 +5,17 @@ This is my template for building a development environment for Python with using
 * Simple login features and default users.
 * Reverse Proxy with HTTPS configuration.
 
+# Local Machine
 ```
+# using sqlite3 for development
 docker-compose run app sh -c "python manage.py makemigrations"
 docker-compose run app sh -c "python manage.py migrate"
-```
-
-# Dev
-```
-sqlite3 for development
 docker-compose -f docker-compose.yml up --build 
 ```
 
-# Prod
+# Prod (Basic)
 ```
-nginx
-postgress
+# start with nginx and postgress
 docker-compose -f docker-compose-prod.yml up --build 
 ```
 
